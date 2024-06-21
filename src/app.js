@@ -2,17 +2,13 @@
 import "bootstrap";
 import "./style.css";
 
-//La única variable que necesito definir fuera de la funcion
 let finalArray = [];
 
-// Función que genera los dominios
 function domainGenerator() {
-  // Defino las variables que voy a necesitar al inicio del documento, la matriz inicial con todos los datos y la final que mandaré al html
   let pronoun = ["the", "our"];
   let adj = ["great", "big"];
   let noun = ["jogger", "racoon"];
 
-  // Importante vaciarlo para que se pueda renovar el domain y que no se añadan a si mismo una y otra vez
   finalArray = [];
 
   //Aquí es donde juntamos todas las posiblidades gracias a la reiteracion de distintos "for" para concatenar pronoun, adj y noun
@@ -26,12 +22,9 @@ function domainGenerator() {
   return finalArray;
 }
 
-//Funcion para que al clicar un botón llame a la funcion traiga el array de strings concatenados y previamente haya vaciado el contenedor en el html
+//Funcion para que al clicar un botón llame a la funcion traiga el array de strings concatenados y vaciar el html
 function onButtonClick(extension) {
-  // Llamo a la función que generará el domain
   const finalArray = domainGenerator();
-
-  // Obtener el div/contenedor en el HTML
   const contenedor = document.getElementById("domainNames");
 
   // Vaciar el contenido
